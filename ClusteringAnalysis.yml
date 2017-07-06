@@ -1,0 +1,8 @@
+#!/usr/bin/env cwl-runner
+cwl:tool: SecondaryAnalysis
+
+DataTable:
+ - class: File
+   location: "test/results/BrCa6exp1v1_DBEC_MolsPerCell.csv"
+ - class: File
+   location: "test/results/BrCa6exp1v2_DBEC_MolsPerCell.csv"
