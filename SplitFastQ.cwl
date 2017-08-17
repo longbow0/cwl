@@ -4,10 +4,10 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: mist
+    dockerPull: rhapsody
 
 baseCommand: [mist_split_fastqs.py]
-stdout: output.txt
+stdout: SplitFastQ.log
 
 inputs:
 
@@ -19,19 +19,27 @@ inputs:
       separate: true
       position: 1
 
-  Label_version:
-    type: int?
+  Subsample:
+    type: float?
     inputBinding:
       separate: true
-      prefix: --label-version
-      position: 2
+      prefix: --subsample
+      position: 3
+
+  Subsample_seed:
+    type: float?
+    inputBinding:
+      separate: true
+      prefix: --subsample-seed
+      position: 4
 
 outputs:
 
-  Read_pairs:
+  Read_Pairs:
     type: File[]
     outputBinding:
       glob: "*.tar.gz"
 
   output:
     type: stdout
+

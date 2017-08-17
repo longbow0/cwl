@@ -4,14 +4,14 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: mist
+    dockerPull: rhapsody
 
 baseCommand: [mist_cluster_analysis.py]
-stdout: cluster_analysis.log
+stdout: ClusterAnalysis.log
 
 inputs:
 
-  DataTable:
+  Data_Table:
     type:
       - File[]
       - File
@@ -23,16 +23,12 @@ inputs:
 
 outputs:
 
-  ClusteringAnalysis:
-    type: File
-    outputBinding:
-      glob: "ClusteringAnalysis.zip"
-
-  ClusteringAnalysisInternal:
+  Clustering_Analysis:
     type: File?
     outputBinding:
-      glob: "ClusterNumberAnalysis*.zip"
+      glob: "ClusteringAnalysis*.zip"
 
   output:
     type: stdout
+
 

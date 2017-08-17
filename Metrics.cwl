@@ -4,63 +4,51 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: mist
+    dockerPull: rhapsody
 
 baseCommand: [mist_metrics.py]
-stdout: metrics.log
+stdout: Metrics.log
+
 inputs:
 
-  Final_Bam:
-    type: File
+  Annotated_Bam:
+    type: File[]
     inputBinding:
       separate: true
+      itemSeparator: ","
       prefix: --bam
       position: 1
 
-  Metrics_files:
+  Metrics_Files:
     type: File
     inputBinding:
       separate: true
       prefix: --metrics-files
       position: 2
       
-  ReadAnnot:
+  Read_Annot:
     type: File
     inputBinding:
       separate: true
       prefix: --read-annot
       position: 3
 
-  Marker_file:
-    type: File?
-    inputBinding:
-      separate: true
-      prefix: --marker-file
-      position: 4
-
-  Cell_type:
-    type: File?
-    inputBinding:
-      separate: true
-      prefix: --show-cell-type
-      position: 5
-
 outputs:
 
-  MetricsSummary:
+  Metrics_Summary:
     type: File
     outputBinding:
       glob: "*_Metrics_Summary.csv"
 
-  DataTables:
+  Data_Tables:
     type: File[]?
     outputBinding:
       glob: "*PerCell.csv"
 
-  MetricsArchive:
+  Final_Bam:
     type: File
     outputBinding:
-      glob: "internal-metrics-archive.tar.gz"
+      glob: '*.final.BAM'
 
   output:
     type: stdout

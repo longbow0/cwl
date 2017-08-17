@@ -4,13 +4,14 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: mist
+    dockerPull: rhapsody
 
 baseCommand: [mist_annotate_reads.py]
-stdout: annotatereads.txt
+stdout: AnnotateReads.log
+
 inputs:
 
-  R1_annotation: 
+  R1_Annotation:
     type: File[]
     inputBinding:
       separate: true
@@ -18,7 +19,7 @@ inputs:
       prefix: --annotR1
       position: 1
 
-  R2_annotation:
+  R2_Annotation:
     type: File[]
     inputBinding:
       separate: true
@@ -26,7 +27,7 @@ inputs:
       prefix: --annotR2
       position: 2
 
-  FilterMetrics:
+  Filter_Metrics:
     type: File[]?
     inputBinding:
       separate: true
@@ -34,59 +35,24 @@ inputs:
       prefix: --filtering-stats
       position: 3
 
-  Alignment_length:
-    type: int?
-    inputBinding:
-      separate: true
-      prefix: --alignment-length
-      position: 4
-
-  Bam_input:
+  Bam_Input:
     type: File[]?
     inputBinding:
       separate: true
       itemSeparator: ","
       prefix: --bam-input
-      position: 5
-
-  Num_cell_image:
-    type: int?
-    inputBinding:
-      separate: true
-      prefix: --num-cell-image
-      position: 6
+      position: 4
 
   Index:
     type: File
     inputBinding:
       separate: true
       prefix: --index
-      position: 7
-
-  Label_version:
-    type: int?
-    inputBinding:
-      separate: true
-      prefix: --label-version
-      position: 8
-
-  Extra_seqs:
-    type: File?
-    inputBinding:
-      separate: true
-      itemSeparator: ","
-      prefix: --extra-seqs
-      position: 9
-
-  Internal_run:
-    type: boolean?
-    inputBinding:
-      prefix: --internal-run
-      position: 10
+      position: 5
 
 outputs:
 
-  SeqMetrics:
+  Seq_Metrics:
     type: File
     outputBinding:
       glob: "*_SeqMetrics.csv"
@@ -103,3 +69,4 @@ outputs:
 
   output:
     type: stdout
+

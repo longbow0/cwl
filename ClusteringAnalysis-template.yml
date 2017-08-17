@@ -1,0 +1,14 @@
+#!/usr/bin/env cwl-runner
+
+cwl:tool: ClusteringAnalysis
+
+# This is a template YML file used to specify the inputs for a BD Genomics Rhaposdy Clustering Analysis run. See the
+# BD Genomics Analysis Setup User Guide (Doc ID: 47383) for more details. Enter the following information:
+
+## DataTable (required) - one or more MolsPerCell.csv or Expression_Matrix.st counts file.
+DataTable:
+ - class: File
+   location: "test/mySample1_DBEC_MolsPerCell.csv"
+
+ - class: File
+   location: "test/mySample2_DBEC_MolsPerCell.csv"

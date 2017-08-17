@@ -4,33 +4,20 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: mist
+    dockerPull: rhapsody
 
 baseCommand: [mist_quality_filter.py]
-stdout: output.txt
+stdout: $(inputs.Read_Pairs.nameroot.split('.')[0]).QualityFilter.log
 
 inputs:
 
-  Read_pairs:
+  Read_Pairs:
     type: File
     inputBinding:
       prefix: --read-pairs
       itemSeparator: ","
       separate: true
       position: 1
-
-  Label_version:
-    type: int?
-    inputBinding:
-      separate: true
-      prefix: --label-version
-      position: 2
-
-  Read_filter_off:
-    type: boolean?
-    inputBinding:
-      prefix: --read-filter-off
-      position: 3
 
 outputs:
 
@@ -44,10 +31,11 @@ outputs:
     outputBinding:
       glob: "*_R2*.fastq.gz"
 
-  FilterMetrics:
+  Filter_Metrics:
     type: File?
     outputBinding:
       glob: "*read_quality.csv"
 
   output:
     type: stdout
+

@@ -4,10 +4,10 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: mist
+    dockerPull: rhapsody
 
 baseCommand: [mist_annotate_molecules.py]
-stdout: molecules.log
+stdout: $(inputs.Valids.basename.split('.')[2]).AnnotateMolecules.log
 
 inputs:
 
@@ -18,24 +18,18 @@ inputs:
       prefix: --valid-annot
       position: 1
 
-  Barcode_num:
-    type: int?
-    inputBinding:
-      separate: true
-      prefix: --num-bc
-      position: 2
-
 outputs:
 
-  Gene_status_list:
+  Gene_Status_List:
     type: File
     outputBinding:
       glob: "*_GeneStatus.csv.*"
 
-  molAnnot_list:
+  Mol_Annot_List:
     type: File
     outputBinding:
       glob: "*_Annotation_Molecule.csv.*"
 
   output:
-    type: stdout 
+    type: stdout
+

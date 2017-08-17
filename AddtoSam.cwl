@@ -4,36 +4,36 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: mist
+    dockerPull: rhapsody
 
 baseCommand: [mist_add_to_sam.py]
-stdout: addtosam.log
+stdout: $(inputs.R2_Bam.nameroot.split('.')[0]).AddtoSam.log
 
 inputs:
 
-  ReadsPerCell:
-    type: File
+  Reads_Per_Cell:
+    type: File?
     inputBinding:
       separate: true
       prefix: --reads
       position: 1
 
-  ReadAnnot:
+  Read_Annot:
     type: File
     inputBinding:
       separate: true
       prefix: --read-annot
       position: 2
 
-  MolAnnot:
+  Mol_Annot:
     type: File
     inputBinding:
       separate: true
       prefix: --mol-annot
       position: 4
 
-  Bam_file:
-    type: File[]
+  R2_Bam:
+    type: File
     inputBinding:
       separate: true
       itemSeparator: ","
@@ -42,10 +42,10 @@ inputs:
 
 outputs:
 
-  FinalBam:
+  Annotated_Bam:
     type: File
     outputBinding:
-      glob: "*sorted.final.BAM"
+      glob: "Annotated_mapping_R2.BAM"
 
   output:
     type: stdout

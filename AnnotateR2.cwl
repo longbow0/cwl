@@ -4,10 +4,10 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: mist
+    dockerPull: rhapsody
 
 baseCommand: [mist_annotate_R2.py]
-stdout: output.txt
+stdout: $(inputs.R2.nameroot.split('.')[0]).AnnotateR2.log
 
 inputs:
 
@@ -18,41 +18,21 @@ inputs:
       prefix: --R2
       position: 1
 
-  Alignment_length:
-    type: int?
-    inputBinding:
-      separate: true
-      prefix: --alignment-length
-      position: 2
-
-  Label_version:
-    type: int?
-    inputBinding:
-      separate: true
-      prefix: --label-version
-      position: 3
-
   Index:
     type: File
     inputBinding:
       separate: true
       prefix: --index
-      position: 4
+      position: 2
 
   Annotation:
     type: File?
     inputBinding:
       separate: true
       prefix: --annotation
-      position: 5
+      position: 3
 
-  Extra_seqs:
-    type: File?
-    inputBinding:
-      separate: true
-      prefix: --extra-seqs
-      position: 6
-  
+
 outputs:
 
   Annot_R2:
@@ -60,19 +40,16 @@ outputs:
     outputBinding:
       glob: "*Annotation_R2.csv"
 
-  R2_bam:
+  R2_Bam:
     type: File
     outputBinding:
       glob: "*mapping_R2.BAM"
 
-  GTF:
-    type: File?
-    outputBinding:
-      glob: "*-annot.gtf"
-
-  Full_genes:
+  Full_Genes:
       type: File?
       outputBinding:
         glob: "*gene-list.txt"
+
   output:
     type: stdout
+

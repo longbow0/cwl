@@ -4,10 +4,10 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: mist
+    dockerPull: rhapsody
 
 baseCommand: [mist_annotate_R1.py]
-stdout: output.txt
+stdout: $(inputs.R1.nameroot.split('.')[0]).AnnotateR1.log
 
 inputs:
 
@@ -18,14 +18,8 @@ inputs:
       prefix: --R1
       position: 1
 
-  Label_version:
-    type: int?
-    inputBinding:
-      separate: true
-      prefix: --label-version
-      position: 2
-
 outputs:
+
   Annotation_R1:
     type: File
     outputBinding:

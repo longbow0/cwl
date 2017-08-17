@@ -4,14 +4,14 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: mist
+    dockerPull: rhapsody
 
 baseCommand: [mist_get_datatables.py]
-stdout: datatables.log
+stdout: GetDataTable.log
 
 inputs:
 
-  Molecule_annotation_list:
+  Molecule_Annotation_List:
     type: File[]
     inputBinding:
       itemSeparator: ","
@@ -19,7 +19,7 @@ inputs:
       prefix: --mol-annot
       position: 1
 
-  Gene_status_list:
+  Gene_Status_List:
     type: File[]
     inputBinding:
       itemSeparator: ","
@@ -27,14 +27,14 @@ inputs:
       prefix: --gene-status
       position: 2
 
-  SeqMetrics:
+  Seq_Metrics:
     type: File
     inputBinding:
       separate: true
       prefix: --seq-stats
       position: 3
 
-  Full_genes:
+  Full_Genes:
     type: File[]?
     inputBinding:
       itemSeparator: ","
@@ -44,13 +44,13 @@ inputs:
 
 outputs:
 
-  Metrics_files:
+  Metrics_Files:
     type: File
     outputBinding:
       glob: "metrics-files.tar.gz"
 
-  ReadsPerCell:
-    type: File
+  Reads_Per_Cell:
+    type: File?
     outputBinding:
       glob: "*ReadsPerCell.csv"
 
@@ -59,37 +59,31 @@ outputs:
     outputBinding:
       glob: "*_Expression_Data.st"
 
-  cell_label_filter:
-    type:
-      type: array
-      items: File
+  Cell_Label_Filter:
+    type: File[]?
     outputBinding:
       glob: "*.png"
 
-  Gene_status:
+  Gene_Status:
     type: File
     outputBinding:
       glob: "*_GeneStatus.csv"
 
-  molAnnot:
+  Mol_Annot:
     type: File
     outputBinding:
       glob: "*_Annotation_Molecule.csv"
 
-  molAnnotBG:
-    type: File
-    outputBinding:
-      glob: "*_Annotation_Molecule_by_gene.csv"
-
   MI_Adjusted_Stats:
-    type: File
+    type: File?
     outputBinding:
       glob: "*_UMI_Adjusted_Stats.csv"
 
-  MI_Adjusted_Stats_Filtered:
-    type: File
+  Putative_Cells_Origin:
+    type: File?
     outputBinding:
-      glob: "*_UMI_Adjusted_CellLabel_Stats.csv"
+      glob: "*_Putative_Cells_Origin.csv"
 
   output:
     type: stdout
+

@@ -4,9 +4,11 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: mist
+    dockerPull: rhapsody
 
 baseCommand: [mist_check_references.py]
+stdout: CheckReference.log
+
 inputs:
 
   Reference: 
@@ -16,24 +18,12 @@ inputs:
       itemSeparator: ","
       prefix: --reference
       position: 1
-
-  Label_version:
-    type: int?
-    inputBinding:
-      separate: true
-      prefix: --label-version
-      position: 2
   
 outputs:
-  index:
+  Index:
     type: File
     outputBinding:
       glob: "*.tar.gz"
-
-  Extra_seqs:
-    type: File?
-    outputBinding:
-      glob: "*concatenated_sup.fasta"
 
   Annotation:
     type: File?
