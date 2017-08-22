@@ -6,7 +6,7 @@ cwl:tool: ClusteringAnalysis
 # BD Genomics Analysis Setup User Guide (Doc ID: 47383) for more details. Enter the following information:
 
 ## DataTable (required) - one or more MolsPerCell.csv or Expression_Matrix.st counts file.
-DataTable:
+Data_Table:
  - class: File
    location: "test/mySample1_DBEC_MolsPerCell.csv"
 
