@@ -4,7 +4,7 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: rhapsody
+    dockerPull: bdgenomics/rhapsody
 
 baseCommand: [mist_metrics.py]
 stdout: Metrics.log

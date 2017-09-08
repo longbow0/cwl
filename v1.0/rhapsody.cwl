@@ -9,7 +9,7 @@ requirements:
 
 hints:
   DockerRequirement:
-    dockerPull: rhapsody
+    dockerPull: bdgenomics/rhapsody
 
 inputs:
 

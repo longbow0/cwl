@@ -4,7 +4,7 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: rhapsody
+    dockerPull: bdgenomics/rhapsody
 
 baseCommand: [mist_add_to_sam.py]
 stdout: $(inputs.R2_Bam.nameroot.split('.')[0]).AddtoSam.log

@@ -4,7 +4,7 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: rhapsody
+    dockerPull: bdgenomics/rhapsody
 
 baseCommand: [mist_annotate_molecules.py]
 stdout: $(inputs.Valids.basename.split('.')[2]).AnnotateMolecules.log
