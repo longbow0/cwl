@@ -4,7 +4,7 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: rhapsody:v1.02
+    dockerPull: bdgenomics/rhapsody:v1.02
 
 baseCommand: [mist_annotate_reads.py]
 stdout: AnnotateReads.log

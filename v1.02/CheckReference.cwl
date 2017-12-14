@@ -4,7 +4,7 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: rhapsody:v1.02
+    dockerPull: bdgenomics/rhapsody:v1.02
 
 baseCommand: [mist_check_references.py]
 stdout: CheckReference.log

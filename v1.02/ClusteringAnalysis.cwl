@@ -4,7 +4,7 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: rhapsody:v1.02
+    dockerPull: bdgenomics/rhapsody:v1.02
 
 baseCommand: [mist_cluster_analysis.py]
 stdout: ClusterAnalysis.log

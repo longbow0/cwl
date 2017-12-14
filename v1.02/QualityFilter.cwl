@@ -4,7 +4,7 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: rhapsody:v1.02
+    dockerPull: bdgenomics/rhapsody:v1.02
 
 baseCommand: [mist_quality_filter.py]
 stdout: $(inputs.Read_Pairs.nameroot.split('.')[0]).QualityFilter.log

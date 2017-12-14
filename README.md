@@ -6,7 +6,9 @@ To obtain the files, click on _Downloads_ in the left navigation panel, and then
 
 For more details on how to use these files, see the BD Genomics Analysis Setup User Guide (Doc ID: 47383).
 
-## v1.02 Release notes - 11/27/27
+## v1.02 Release notes - Nov 27, 2017
 - Added support for BD Single-cell multiplexing kit - Human
 - Improved pipeline speed by deleting large temp files
 - Removed network requirement when running locally
+
+- bug fix for the wrong docker image name - Dec 13, 2017

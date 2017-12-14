@@ -4,7 +4,7 @@ class: CommandLineTool
 
 hints:
   DockerRequirement:
-    dockerPull: rhapsody:v1.02
+    dockerPull: bdgenomics/rhapsody:v1.02
 
 baseCommand: [mist_annotate_R2.py]
 stdout: $(inputs.R2.nameroot.split('.')[0]).AnnotateR2.log
