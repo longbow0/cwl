@@ -12,3 +12,14 @@ For more details on how to use these files, see the BD Genomics Analysis Setup U
 - Removed network requirement when running locally
 
 - bug fix for the wrong docker image name - Dec 13, 2017
+
+## v1.3 Release notes - July 31, 2018
+- Added support for BD™ AbSeq assay
+- Added support for BD™ single-cell multiplexing kit - Mouse Immune
+- New pipeline input - AbSeq Reference
+- New pipeline outputs - Unfiltered cell-gene data tables
+- Updated Metrics_Summary.csv to support metrics from multiple sequencing libraries
+- Modified "RSEC" error correction of low depth molecules (minor molecule count changes expected)
+- Optimized pipeline to run faster
+
+
