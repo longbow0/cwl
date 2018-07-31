@@ -10,7 +10,6 @@ For more details on how to use these files, see the BD Genomics Analysis Setup U
 - Added support for BD Single-cell multiplexing kit - Human
 - Improved pipeline speed by deleting large temp files
 - Removed network requirement when running locally
-
 - bug fix for the wrong docker image name - Dec 13, 2017
 
 ## v1.3 Release notes - July 31, 2018
@@ -19,7 +18,7 @@ For more details on how to use these files, see the BD Genomics Analysis Setup U
 - New pipeline input - AbSeq Reference
 - New pipeline outputs - Unfiltered cell-gene data tables
 - Updated Metrics_Summary.csv to support metrics from multiple sequencing libraries
-- Modified "RSEC" error correction of low depth molecules (minor molecule count changes expected)
+- Updated Recursive Substitution Error Correction (RSEC) algorithm (minor molecule count changes expected)
 - Optimized pipeline to run faster
 
 

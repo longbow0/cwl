@@ -60,13 +60,13 @@ inputs:
     type:
     - 'null'
     - symbols:
-      - No Multiplexing
-      - Single-Cell Multiplex Kit - Human
+      - human
+      - hs
+      - mouse
+      - mm
       type: enum
       name: Sample_Tags_Version
     doc: The reference AbOligo tags for the multiplexed experiment
-  Extra_Seqs:
-    type: File?
 outputs:
   MI_Adjusted_Stats:
     type: File?
@@ -134,6 +134,7 @@ steps:
     - AbSeq_UMI
     - Putative_Cell_Call
     - Use_DBEC
+    - Extra_Seqs
   CheckReference:
     run: CheckReference.cwl
     in:
@@ -189,7 +190,7 @@ steps:
     in:
       R2: QualityFilter/R2
       Index: CheckReference/Index
-      Extra_Seqs: Extra_Seqs
+      Extra_Seqs: Internal_Settings/Extra_Seqs
     out:
     - Annot_R2
     - R2_Bam
@@ -208,7 +209,7 @@ steps:
       R1_Annotation: AnnotateR1/Annotation_R1
       R2_Annotation: AnnotateR2/Annot_R2
       Filter_Metrics: QualityFilter/Filter_Metrics
-      Extra_Seqs: Extra_Seqs
+      Extra_Seqs: Internal_Settings/Extra_Seqs
       Bam_Input: Bam_Input
       Sample_Tags_Version: Multiplexing_Settings/Sample_Tags_Version
       Subsample_Tags: Multiplexing_Settings/Subsample_Tags

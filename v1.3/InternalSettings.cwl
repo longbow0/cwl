@@ -47,3 +47,8 @@ outputs:
     outputBinding:
       outputEval: ${ if (inputs.hasOwnProperty('_Use_DBEC')) { return inputs._Use_DBEC
         } else { return true } }
+  Extra_Seqs:
+    type: File?
+    outputBinding:
+      outputEval: ${ if (inputs.hasOwnProperty('_Extra_Seqs')) { return inputs._Extra_Seqs
+        } else { return null } }
