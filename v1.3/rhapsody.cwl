@@ -69,38 +69,52 @@ inputs:
     doc: The reference AbOligo tags for the multiplexed experiment
 outputs:
   MI_Adjusted_Stats:
+    label: UMI Adjusted Statistics
     type: File?
     outputSource: GetDataTable/MI_Adjusted_Stats
   Putative_Cells_Origin:
+    label: Putative Cells Origin
     type: File?
     outputSource: GetDataTable/Putative_Cells_Origin
   Cell_Label_Filter:
+    label: Cell Label Filter
     type: File[]?
     outputSource: GetDataTable/Cell_Label_Filter
   Expression_Data:
+    label: Expression Matrix
     type: File
     outputSource: GetDataTable/Expression_Data
   Expression_Data_Unfiltered:
+    label: Unfiltered Expression Matrix
     type: File?
     outputSource: GetDataTable/Expression_Data_Unfiltered
   Final_Bam:
+    label: Final BAM File
     type: File
     outputSource: Metrics/Final_Bam
   Metrics_Summary:
+    label: Metrics Summary
     type: File
     outputSource: Metrics/Metrics_Summary
   Data_Tables:
+    label: Data Tables
     type: File[]?
     outputSource: GetDataTable/Data_Tables
   Data_Tables_Unfiltered:
+    label: Unfiltered Data Tables
     type: File[]?
     outputSource: GetDataTable/Data_Tables_Unfiltered
   Clustering_Analysis:
+    label: Cluster Analysis
     type: File?
     outputSource: ClusterAnalysis/Clustering_Analysis
   Logs_Archive:
+    label: Pipeline Logs
     type: File
     outputSource: MakeLogsArchive/logs_tarball
+  Multiplex:
+    type: File[]?
+    outputSource: GetDataTable/Trueno_out
 steps:
   Subsample_Settings:
     label: Subsample Settings
@@ -186,6 +200,9 @@ steps:
     scatter:
     - R1
   AnnotateR2:
+    requirements:
+      ResourceRequirement:
+        ramMin: 4000
     run: AnnotateR2.cwl
     in:
       R2: QualityFilter/R2
@@ -299,6 +316,9 @@ steps:
     - Final_Bam
     - output
   ClusterAnalysis:
+    requirements:
+      ResourceRequirement:
+        ramMin: 16000
     run: ClusteringAnalysis.cwl
     in:
       Data_Table: GetDataTable/Expression_Data

@@ -6,24 +6,27 @@ cwl:tool: rhapsody
 # BD Genomics Analysis Setup User Guide (Doc ID: 47383) for more details. Enter the following information:
 
 
-## Reads (required) - path to your read files in the FASTQ.GZ format. You may specify as many R1/R2 read pairs as you want.
+## Reads (required) - Path to your read files in the FASTQ.GZ format. You may specify as many R1/R2 read pairs as you want.
 Reads:
-
- - class: File
-   location: "test/mySample_R2_.fastq.gz"
 
  - class: File
    location: "test/mySample_R1_.fastq.gz"
 
+ - class: File
+   location: "test/mySample_R2_.fastq.gz"
 
-## Reference (required) - path to the gene panel used to prepare the library, in FASTA format.
+
+## Reference (required) - Path to mRNA reference file for pre-designed, supplemental, or custom panel, in FASTA format.
 Reference:
  - class: File
-   location: "test/Immune_Response_Panel_Hs.fasta"
+   location: "test/reference.fasta"
 
+## AbSeq_Reference (optional) - Path to the AbSeq reference file in FASTA format.  Only needed if BD AbSeq Ab-Oligos are used.
+#AbSeq_Reference:
+# - class: File
+#   location: "test/AbSeq_reference.fasta"
 
 ## Bam_input (optional) - Path to the BAM output from a previous analysis of the same library as the FASTQ files.
-
 Bam_Input:
  - class: File
    location: "test/mySample.final.BAM"
@@ -40,7 +43,7 @@ Bam_Input:
 ## Multiplex options ##
 #######################
 
-## Sample Tags Version (optional) - specify if multiplexed run: human or mouse (hs and mm also accepted)
+## Sample Tags Version (optional) - Specify if multiplexed run: human, hs, mouse or mm
 #Sample_Tags_Version: human
 
 ## Subsample Sample Tags (optional) -  A number >1 or fraction (0 < n < 1) to indicate the number or percentage of reads to subsample.
