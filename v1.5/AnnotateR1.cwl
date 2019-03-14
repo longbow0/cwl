@@ -1,13 +1,16 @@
 requirements:
   DockerRequirement:
     dockerPull: bdgenomics/rhapsody:1.5
-$namespaces:
-  arv: http://arvados.org/cwl#
-hints:
-  arv:RuntimeConstraints:
-    keep_cache: 512
 cwlVersion: v1.0
 class: CommandLineTool
+$namespaces:
+  arv: "http://arvados.org/cwl#"
+  sbg: "https://sevenbridges.com"
+hints:
+- class: "arv:RuntimeConstraints"
+  keep_cache: 512
+- class: "sbg:AWSInstanceType"
+  value: "c5.18xlarge"
 baseCommand:
 - mist_annotate_R1.py
 inputs:

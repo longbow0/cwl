@@ -3,6 +3,11 @@ requirements:
     dockerPull: bdgenomics/rhapsody:1.5
 cwlVersion: v1.0
 class: CommandLineTool
+$namespaces:
+  sbg: "https://sevenbridges.com"
+hints:
+- class: "sbg:AWSInstanceType"
+  value: "r4.16xlarge"
 baseCommand:
 - mist_add_to_sam.py
 inputs:

@@ -259,9 +259,6 @@ steps:
     - Sample_Name
     - output
   AnnotateMolecules:
-    requirements:
-      ResourceRequirement:
-        ramMin: 16000
     run: AnnotateMolecules.cwl
     in:
       Valids: AnnotateReads/Valid_Reads

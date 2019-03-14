@@ -5,8 +5,8 @@ requirements:
 $namespaces:
   arv: http://arvados.org/cwl#
 hints:
-  arv:RuntimeConstraints:
-    keep_cache: 512
+- class: "arv:RuntimeConstraints"
+  keep_cache: 512
 cwlVersion: v1.0
 class: CommandLineTool
 baseCommand:

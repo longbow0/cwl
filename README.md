@@ -21,4 +21,11 @@ For more details on how to use these files, see the BD Genomics Analysis Setup U
 - Updated Recursive Substitution Error Correction (RSEC) algorithm (minor molecule count changes expected)
 - Optimized pipeline to run faster
 
+## v1.5 Release notes - March 14, 2019
+- Added support for BD Single-cell multiplexing kit – Mouse Immune
+- Updated various filtering thresholds to support sequencing runs with shorter read length
+- Deprecated pipeline input – BAM input
+- Fixed bug in Quality Filter (minor metrics changes expected)
+- Optimized pipeline (computationally faster, more scalable to support larger input data size, and better logging)
+
 

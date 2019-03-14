@@ -5,8 +5,10 @@ $namespaces:
   arv: http://arvados.org/cwl#
   sbg: "https://sevenbridges.com"
 hints:
-  arv:RuntimeConstraints:
+  - class: arv:RuntimeConstraints
     keep_cache: 512
+  - class: 'sbg:AWSInstanceType'
+    value: c5.18xlarge
 cwlVersion: v1.0
 class: CommandLineTool
 baseCommand:
