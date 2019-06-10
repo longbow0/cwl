@@ -28,4 +28,11 @@ For more details on how to use these files, see the BD Genomics Analysis Setup U
 - Fixed bug in Quality Filter (minor metrics changes expected)
 - Optimized pipeline (computationally faster, more scalable to support larger input data size, and better logging)
 
+## v1.6   June 10, 2019
+- Added new options for putative cell determination
+- Exact Cell Count - Set a specific number of cells as putative, based on those with the highest error-corrected read count
+- Disable Refined Putative Cell Calling - Determine putative cells using only the basic algorithm
+- Updated to Python3
+- Updated alignment defaults (minor molecule count changes expected)
+- Local install only - CWL files are bundled into one file
 
