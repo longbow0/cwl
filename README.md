@@ -8,6 +8,11 @@ For more details on how to use these files, see the BD Genomics Analysis Setup U
 
 # Release notes
 
+## v1.6.1 - July 2, 2019
+- Increased memory limits for GetDataTable and Metrics
+- Fixed bug associated with "No Multiplex" option on SBG
+- Uses fewer resources in AddToSam step.
+ 
 ## v1.6 - June 10, 2019
 - Added new options for putative cell determination:
   - Exact Cell Count: Set a specific number of cells as putative, based on those with the highest error-corrected read count
