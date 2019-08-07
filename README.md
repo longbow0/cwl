@@ -8,6 +8,11 @@ For more details on how to use these files, see the BD Genomics Analysis Setup U
 
 # Release notes
 
+## v1.7.1 - August 7, 2019
+- Fixed bug that can cause crashes when missing expression data
+- Changed name of AddToSam step to AddToBam 
+- Added workflow for WTA assays
+
 ## v1.6.1 - July 2, 2019
 - Increased memory limits for GetDataTable and Metrics
 - Fixed bug associated with "No Multiplex" option on SBG
