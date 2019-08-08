@@ -1225,13 +1225,13 @@
                         "items": "File", 
                         "type": "array"
                     }, 
-                    "https://sevenbridges.comfileTypes": "fastq.gz, fq.gz", 
+                    "https://sevenbridges.comfileTypes": "FASTQ.GZ, FQ.GZ", 
                     "id": "#main/Reads"
                 }, 
                 {
                     "label": "Reference Genome", 
                     "type": "File", 
-                    "https://sevenbridges.comfileTypes": "tar.gz", 
+                    "https://sevenbridges.comfileTypes": "TAR.GZ", 
                     "id": "#main/Reference_Genome"
                 }, 
                 {
@@ -1295,7 +1295,7 @@
                 {
                     "label": "Transcriptome Annotation", 
                     "type": "File", 
-                    "https://sevenbridges.comfileTypes": "gtf", 
+                    "https://sevenbridges.comfileTypes": "GTF", 
                     "id": "#main/Transcriptome_Annotation"
                 }
             ], 

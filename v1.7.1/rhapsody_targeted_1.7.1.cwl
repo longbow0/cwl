@@ -1292,7 +1292,7 @@
                         "items": "File", 
                         "type": "array"
                     }, 
-                    "https://sevenbridges.comfileTypes": "fastq.gz, fq.gz", 
+                    "https://sevenbridges.comfileTypes": "FASTQ.GZ, FQ.GZ", 
                     "id": "#main/Reads"
                 }, 
                 {
