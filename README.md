@@ -9,10 +9,9 @@ For more details on how to use these files, see the BD Genomics Analysis Setup U
 # Release notes
 
 ## v1.7.1 - August 7, 2019
-- Fixed bug that can cause crashes when missing datatables
-- Fixed bug that affected runs using Basic Cell Caller
-- Changed name of AddToSam step to AddToBam 
-- Added workflow for WTA assays
+- Added BD Rhapsody™ WTA Analysis Pipeline
+- Fixed bug that can cause stalling when zero putative cells were identified
+- Fixed bug that affected runs using Disable Refined Putative Cell Calling option
 
 ## v1.6.1 - July 2, 2019
 - Increased memory limits for GetDataTable and Metrics
