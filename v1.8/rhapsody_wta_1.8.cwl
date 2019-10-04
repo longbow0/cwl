@@ -2367,7 +2367,7 @@
                 }, 
                 {
                     "class": "https://sevenbridges.comAWSInstanceType", 
-                    "value": "r4.16xlarge"
+                    "value": "r5.4xlarge"
                 }
             ]
         }, 
