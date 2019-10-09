@@ -8,7 +8,7 @@ For more details on how to use these files, see the BD Genomics Analysis Setup U
 
 # Release notes
 
-##v1.8 - Oct 4, 2019
+## v1.8 - Oct 4, 2019
 
 BD Rhapsody™ Targeted Analysis Pipeline and BD Rhapsody™ WTA Analysis Pipeline:
 - Added Sample_Tag_ReadsPerCell.csv to Multiplex Output
