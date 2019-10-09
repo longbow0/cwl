@@ -11,15 +11,18 @@ For more details on how to use these files, see the BD Genomics Analysis Setup U
 ## v1.8 - Oct 4, 2019
 
 BD Rhapsody™ Targeted Analysis Pipeline and BD Rhapsody™ WTA Analysis Pipeline:
+
 - Added Sample_Tag_ReadsPerCell.csv to Multiplex Output
 - Optimized pipeline in various steps for memory usage
 - Fixed bug in status determination for UMI_Adjusted_Stats.csv file
 
 BD Rhapsody™ Targeted Analysis Pipeline:
+
 - Updated Targets section in Metrics_Summary.csv to calculate metrics based on targets detected in putative cells only
 - Removed Clustering Analysis and outputs 
 
 BD Rhapsody™ WTA Analysis Pipeline:
+
 - Added support for BD™ AbSeq libraries
 - Removed Targets section in Metrics_Summary.csv for WTA only libraries
 - Removed Pct_Error_Reads and Error_Depth in UMI_Adjusted_Stats.csv, which are not applicable to WTA only libraries
