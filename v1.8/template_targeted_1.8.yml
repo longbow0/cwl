@@ -26,12 +26,26 @@ Reference:
 # - class: File
 #   location: "test/AbSeq_reference.fasta"
 
+####################################
+## Putative Cell Calling Settings ##
+####################################
+
+## Exact cell count - Set a specific number (>=1) of cells as putative, based on those with the highest error-corrected read count
+#Exact_Cell_Count: 10000
+
+## Disable Refined Putative Cell Calling - Determine putative cells using only the basic algorithm (minimum second derivative along the cumulative reads curve).  The refined algorithm attempts to remove false positives and recover false negatives, but may not be ideal for certain complex mixtures of cell types.  Does not apply if Exact Cell Count is set.
+## values can be true or false.
+#Basic_Algo_Only: true
+
+########################
+## Subsample Settings ##
+########################
+
 ## Subsample (optional) - A number >1 or fraction (0 < n < 1) to indicate the number or percentage of reads to subsample.
 #Subsample: 0.01
 
 ## Subsample seed (optional) - A seed for replicating a previous subsampled run.
 #Subsample_seed: 3445
-
 
 #######################
 ## Multiplex options ##
