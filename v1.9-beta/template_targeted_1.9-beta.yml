@@ -60,3 +60,10 @@ Reference:
 ## Tag_Names (optional) - Specify the tag number followed by '-' and the desired sample name to appear in Sample_Tag_Metrics.csv
 # Do not use the special characters: &, (), [], {},  <>, ?, |
 #Tag_Names: [4-mySample, 9-myOtherSample, 6-alsoThisSample]
+
+#######################
+## VDJ option ##
+#######################
+
+## VDJ Version (optional) - Specify if VDJ run: human, mouse, humanBCR, humanTCR, mouseBCR, mouseTCR
+#VDJ_Version: human
