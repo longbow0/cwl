@@ -2081,17 +2081,17 @@
                                     "type": "array",
                                     "items": "File"
                                 },
-                                "id": "#main/FindDataTableForCellClassifier/0aefe96a-ba82-4090-8a4b-26a20dfbe44b/dataTables"
+                                "id": "#main/FindDataTableForCellClassifier/42bdb62e-8573-4bff-aecb-d0b818308f66/dataTables"
                             }
                         ],
                         "outputs": [
                             {
                                 "type": "File",
-                                "id": "#main/FindDataTableForCellClassifier/0aefe96a-ba82-4090-8a4b-26a20dfbe44b/molsPerCellMatrixForCellClassifier"
+                                "id": "#main/FindDataTableForCellClassifier/42bdb62e-8573-4bff-aecb-d0b818308f66/molsPerCellMatrixForCellClassifier"
                             }
                         ],
                         "expression": "${\n  for (var i = 0; i < inputs.dataTables.length; i++) {\n    var dataTable = inputs.dataTables[i];\n    if (dataTable.basename.indexOf(\"_RSEC_MolsPerCell.csv\") >= 0) {\n      return({molsPerCellMatrixForCellClassifier: dataTable});\n    }\n  }\n  return({molsPerCellMatrixForCellClassifier: null});\n}",
-                        "id": "#main/FindDataTableForCellClassifier/0aefe96a-ba82-4090-8a4b-26a20dfbe44b"
+                        "id": "#main/FindDataTableForCellClassifier/42bdb62e-8573-4bff-aecb-d0b818308f66"
                     },
                     "in": [
                         {
